@@ -1,3 +1,6 @@
 button {
   background-color: #333;
+  width: 10rem;
+  height: 10rem;
+  color: red;
 }

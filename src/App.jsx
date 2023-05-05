@@ -5,15 +5,15 @@ import Square from './components/ui/Square';
 function App() {
   return (
     <div className="container">
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
+      <Square value={1} />
+      <Square value={1} />
+      <Square value={1} />
+      <Square value={1} />
+      <Square value={1} />
+      <Square value={1} />
+      <Square value={1} />
+      <Square value={1} />
+      <Square value={1} />
     </div>
   );
 }
