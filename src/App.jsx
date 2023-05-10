@@ -4,17 +4,23 @@ import Square from './components/ui/Square';
 import { useState } from 'react';
 
 function App() {
+  const [clickVal, setClickVal] = useState(0);
+
+  function counter() {
+    setClickVal(clickVal + 1);
+  }
   return (
     <div className="container">
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
+      <p>{clickVal}</p>
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCouter={counter} clickVal={clickVal} />
     </div>
   );
 }

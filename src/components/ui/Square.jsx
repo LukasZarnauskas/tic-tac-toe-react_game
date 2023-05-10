@@ -1,15 +1,25 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Square() {
+function Square({ onClickCouter, clickVal }) {
   const [value, setvalue] = useState('');
 
   function whatValue() {
-    setvalue('x');
+    if (clickVal % 2 === 0) {
+      setvalue('x');
+    } else {
+      setvalue('O');
+    }
   }
-
+  console.log(clickVal);
   return (
-    <button onClick={whatValue} className="square">
+    <button
+      onClick={() => {
+        whatValue();
+        onClickCouter();
+      }}
+      className="square"
+    >
       {value}
     </button>
   );
