@@ -11,16 +11,15 @@ function App() {
   }
   return (
     <div className="container">
-      <p>{clickVal}</p>
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
-      <Square onClickCouter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
+      <Square onClickCounter={counter} clickVal={clickVal} />
     </div>
   );
 }

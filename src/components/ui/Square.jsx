@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Square({ onClickCouter, clickVal }) {
+function Square({ onClickCounter, clickVal }) {
   const [value, setvalue] = useState('');
+  const [canClick, setCanClick] = useState(true);
 
   function whatValue() {
     if (clickVal % 2 === 0) {
@@ -11,14 +12,20 @@ function Square({ onClickCouter, clickVal }) {
       setvalue('O');
     }
   }
-  console.log(clickVal);
+  function disableClick() {
+    setCanClick(!canClick);
+  }
+
+  console.log(canClick);
   return (
     <button
       onClick={() => {
         whatValue();
-        onClickCouter();
+        onClickCounter();
+        disableClick();
       }}
       className="square"
+      disabled={!canClick}
     >
       {value}
     </button>
