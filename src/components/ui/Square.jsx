@@ -1,24 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Square({ onClickCounter, clickVal }) {
-  const [value, setvalue] = useState('');
+function Square({ onClickCounter, clickVal, id, setWinner }) {
+  const [value, setValue] = useState('');
   const [canClick, setCanClick] = useState(true);
 
   function whatValue() {
     if (clickVal % 2 === 0) {
-      setvalue('x');
+      setValue('X');
+      setWinner(id, 'X');
     } else {
-      setvalue('O');
+      setValue('O');
+      setWinner(id, 'O');
     }
   }
+
   function disableClick() {
-    setCanClick(!canClick);
+    setCanClick(false);
   }
 
-  console.log(canClick);
   return (
     <button
+      id={id}
       onClick={() => {
         whatValue();
         onClickCounter();
