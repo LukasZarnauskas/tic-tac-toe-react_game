@@ -75,7 +75,7 @@ function App() {
   console.log(win);
   return (
     <div>
-      {win === 'X' || win === 'O' ? <p>{win} win !!!</p> : null}
+      {win === 'X' || win === 'O' ? <p>{win} win !!!</p> : <p> </p>}
       <div className="container">
         <Square
           id={1}
