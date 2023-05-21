@@ -6,9 +6,11 @@ import { useState } from 'react';
 function App() {
   const [clickVal, setClickVal] = useState(0);
   const [stepInfo, setStepInfo] = useState([]);
+  const [win, setWin] = useState('');
   function counter() {
     setClickVal(clickVal + 1);
   }
+
   function setWinner(id, value) {
     const newStepInfo = [...stepInfo];
     newStepInfo.push({ identification: id, sign: value });
@@ -40,7 +42,7 @@ function App() {
         (step) => [3, 5, 7].includes(step.identification) && step.sign === 'X',
       ).length === 3
     ) {
-      console.log('X Win');
+      return setWin('X');
     } else if (
       newStepInfo.filter(
         (step) => [1, 2, 3].includes(step.identification) && step.sign === 'O',
@@ -67,66 +69,69 @@ function App() {
         (step) => [3, 5, 7].includes(step.identification) && step.sign === 'O',
       ).length === 3
     ) {
-      console.log('O Win');
+      return setWin('O');
     }
   }
-
+  console.log(win);
   return (
-    <div className="container">
-      <Square
-        id={1}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={2}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={3}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={4}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={5}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={6}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={7}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={8}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
-      <Square
-        id={9}
-        onClickCounter={counter}
-        clickVal={clickVal}
-        setWinner={setWinner}
-      />
+    <div>
+      {win === 'X' || win === 'O' ? <p>{win} win !!!</p> : null}
+      <div className="container">
+        <Square
+          id={1}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={2}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={3}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={4}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={5}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={6}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={7}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={8}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+        <Square
+          id={9}
+          onClickCounter={counter}
+          clickVal={clickVal}
+          setWinner={setWinner}
+        />
+      </div>
     </div>
   );
 }
