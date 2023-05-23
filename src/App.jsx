@@ -71,12 +71,19 @@ function App() {
       ).length === 3
     ) {
       return setWin('O'), setDisabled(false);
+    } else if (
+      newStepInfo.filter((step) =>
+        [1, 2, 3, 4, 5, 6, 7, 8, 9].includes(step.identification),
+      ).length === 9
+    ) {
+      setWin('Draw');
     }
   }
 
   return (
     <div>
       {win === 'X' || win === 'O' ? <p>{win} win !!!</p> : <p> </p>}
+      {win === 'Draw' && <p>{win}</p>}
       <div className="container">
         <Square
           id={1}
