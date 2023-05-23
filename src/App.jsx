@@ -7,6 +7,7 @@ function App() {
   const [clickVal, setClickVal] = useState(0);
   const [stepInfo, setStepInfo] = useState([]);
   const [win, setWin] = useState('');
+  const [disable, setDisabled] = useState(true);
   function counter() {
     setClickVal(clickVal + 1);
   }
@@ -42,7 +43,7 @@ function App() {
         (step) => [3, 5, 7].includes(step.identification) && step.sign === 'X',
       ).length === 3
     ) {
-      return setWin('X');
+      return setWin('X'), setDisabled(false);
     } else if (
       newStepInfo.filter(
         (step) => [1, 2, 3].includes(step.identification) && step.sign === 'O',
@@ -69,10 +70,10 @@ function App() {
         (step) => [3, 5, 7].includes(step.identification) && step.sign === 'O',
       ).length === 3
     ) {
-      return setWin('O');
+      return setWin('O'), setDisabled(false);
     }
   }
-  console.log(win);
+
   return (
     <div>
       {win === 'X' || win === 'O' ? <p>{win} win !!!</p> : <p> </p>}
@@ -82,54 +83,63 @@ function App() {
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={2}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={3}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={4}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={5}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={6}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={7}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={8}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
         <Square
           id={9}
           onClickCounter={counter}
           clickVal={clickVal}
           setWinner={setWinner}
+          disableAll={disable}
         />
       </div>
     </div>

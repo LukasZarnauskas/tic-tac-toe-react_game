@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-function Square({ onClickCounter, clickVal, id, setWinner }) {
+function Square({ onClickCounter, clickVal, id, setWinner, disableAll }) {
   const [value, setValue] = useState('');
   const [canClick, setCanClick] = useState(true);
 
@@ -28,7 +28,7 @@ function Square({ onClickCounter, clickVal, id, setWinner }) {
         disableClick();
       }}
       className="square"
-      disabled={!canClick}
+      disabled={!canClick || !disableAll}
     >
       {value}
     </button>
