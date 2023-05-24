@@ -1,6 +1,43 @@
+body {
+  background-image: linear-gradient(
+    #f741d5,
+    #f739c0,
+    #fc69f9,
+    #ff80fd,
+    #ff91fd,
+    #6cf9fb,
+    #43f8fb,
+    #21f2f5
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 button {
-  background-color: #333;
+  background-image: linear-gradient(
+    to bottom right,
+    #0bbffc,
+    #5ff0fb,
+    #9efdff,
+    #ff91fd,
+    #fc69f9,
+    #f741d5
+  );
   width: 10rem;
   height: 10rem;
-  color: red;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #9e920c;
+}
+.winText {
+  text-align: center;
+  font-size: 8rem;
+  background: -webkit-linear-gradient(#0bbffc, #38d7fd, #5ff0fb, #9efdff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: oblique;
+}
+.winMsg {
+  height: 10rem;
+  margin-bottom: 5rem;
 }

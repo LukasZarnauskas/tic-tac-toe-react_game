@@ -82,8 +82,14 @@ function App() {
 
   return (
     <div>
-      {win === 'X' || win === 'O' ? <p>{win} win !!!</p> : <p> </p>}
-      {win === 'Draw' && <p>{win}</p>}
+      <div className="winMsg">
+        {win === 'X' || win === 'O' ? (
+          <p className="winText">{win} win !!!</p>
+        ) : (
+          <p> </p>
+        )}
+        {win === 'Draw' && <p className="winText">{win}</p>}
+      </div>
       <div className="container">
         <Square
           id={1}
