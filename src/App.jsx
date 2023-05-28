@@ -8,6 +8,7 @@ function App() {
   const [stepInfo, setStepInfo] = useState([]);
   const [win, setWin] = useState('');
   const [disable, setDisabled] = useState(true);
+  // const [emptySquare, setEmptySquare] = useState(false);
   function counter() {
     setClickVal(clickVal + 1);
   }
@@ -79,6 +80,13 @@ function App() {
       setWin('Draw');
     }
   }
+  // function resetGame() {
+  //   setClickVal(0);
+  //   setStepInfo([]);
+  //   setWin('');
+  //   setDisabled(true);
+  //   setEmptySquare(true);
+  // }
 
   return (
     <div>
@@ -154,6 +162,16 @@ function App() {
           setWinner={setWinner}
           disableAll={disable}
         />
+      </div>
+      <div className="center">
+        <button
+          className="reset"
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          Play Again
+        </button>
       </div>
     </div>
   );

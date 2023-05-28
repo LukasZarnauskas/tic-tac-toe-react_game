@@ -13,7 +13,7 @@ body {
   height: 100vh;
 }
 
-button {
+.square {
   background-image: linear-gradient(
     to bottom right,
     #0bbffc,
@@ -40,4 +40,21 @@ button {
 .winMsg {
   height: 10rem;
   margin-bottom: 5rem;
+}
+
+.reset {
+  margin-top: 3rem;
+  padding: 1.5rem 3rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  font-size: 3rem;
+}
+
+.reset:hover {
+  background-color: #555;
+}
+
+.center {
+  text-align: center;
 }
